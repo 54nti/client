@@ -15,8 +15,8 @@ public class Main {
 
         JFrame frame = new JFrame("Client");
         frame.setSize(450, 450);
-        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel title = new JLabel("File Sender");
         title.setFont(new Font("Arial", Font.BOLD, 25));
@@ -28,9 +28,6 @@ public class Main {
         fileName.setBorder(new EmptyBorder(50, 0, 0, 0));
         fileName.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JPanel btnContainer = new JPanel();
-        btnContainer.setBorder(new EmptyBorder(75, 0, 10, 0));
-
         JButton send = new JButton("Send file");
         send.setPreferredSize(new Dimension(150, 75));
         send.setFont(new Font("Arial", Font.BOLD, 20));
@@ -38,6 +35,9 @@ public class Main {
         JButton choose = new JButton("Choose file");
         choose.setPreferredSize(new Dimension(150, 75));
         choose.setFont(new Font("Arial", Font.BOLD, 20));
+
+        JPanel btnContainer = new JPanel();
+        btnContainer.setBorder(new EmptyBorder(75, 0, 10, 0));
 
         btnContainer.add(send);
         btnContainer.add(choose);
@@ -83,5 +83,10 @@ public class Main {
                 }
             }
         });
+
+        frame.add(title);
+        frame.add(fileName);
+        frame.add(btnContainer);
+        frame.setVisible(true);
     }
 }
